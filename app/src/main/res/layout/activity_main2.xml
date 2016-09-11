@@ -162,15 +162,7 @@
                android:layout_height="match_parent"
                android:background="@color/light_gold"
                />
-                <android.support.design.widget.FloatingActionButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom|right"
-                    android:layout_margin="10dp"
-                    android:src="@android:drawable/ic_input_add"
-                    android:id="@+id/add_btn"
-                    android:background="@color/gold"
-                    />
+
        </android.support.v7.widget.CardView>
 
 

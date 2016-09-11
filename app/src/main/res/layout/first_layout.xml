@@ -35,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             app:cardCornerRadius="20dp"
+            android:id="@+id/making_bill"
             app:cardBackgroundColor="#e0e0e0"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
@@ -73,6 +74,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
+            android:id="@+id/calculate"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -107,6 +109,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
+            android:id="@+id/profiles"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -141,6 +144,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
+            android:id="@+id/rates"
             >
             <RelativeLayout
                 android:layout_width="match_parent"

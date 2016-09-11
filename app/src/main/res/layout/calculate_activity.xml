@@ -3,6 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mid_gold"
+    android:orientation="vertical"
+    android:paddingRight="50dp"
+    android:paddingLeft="50dp"
     >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,5 +21,93 @@
             android:textColor="#fff"
             />
     </RelativeLayout>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            android:textColor="#fff"
+            android:textColorHint="#e0e0e0"
+            android:id="@+id/cweight"
+            android:inputType="numberDecimal"
 
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Wastage"
+            android:textColor="#fff"
+            android:textColorHint="#e0e0e0"
+            android:id="@+id/cwastage"
+            android:inputType="numberDecimal"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Making"
+            android:textColor="#fff"
+            android:textColorHint="#e0e0e0"
+            android:id="@+id/cmaking"
+            android:inputType="numberDecimal"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rate"
+            android:textColor="#fff"
+            android:textColorHint="#e0e0e0"
+            android:id="@+id/crate"
+            android:inputType="numberDecimal"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Discount"
+            android:textColor="#fff"
+            android:textColorHint="#e0e0e0"
+            android:id="@+id/cdiscount"
+            android:inputType="numberDecimal"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textSize="25sp"
+        android:textColor="#e0e0e0"
+        android:id="@+id/view_total"
+        android:textAlignment="center"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gold"
+        android:layout_marginTop="5dp"
+        android:text="Calculate"
+        android:id="@+id/ctotal"
+        android:textColor="#000"
+        />
 </LinearLayout>

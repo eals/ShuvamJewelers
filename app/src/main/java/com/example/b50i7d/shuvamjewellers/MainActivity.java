@@ -3,7 +3,6 @@ package com.example.b50i7d.shuvamjewellers;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,7 +22,6 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    FloatingActionButton add_btn ;
     TextView gold,silver;
     CardView cardView ;
     public static final String gold_value = "gold_value";
@@ -83,9 +81,6 @@ public class MainActivity extends AppCompatActivity {
         String imgSett2 = pref.getString(silver_value, "");
         silver.setText(imgSett2);
 
-
-
-        add_btn = (FloatingActionButton) findViewById(R.id.add_btn);
         RecyclerView recyle = (RecyclerView)findViewById(R.id.my_recycler_view);
         recyle.setHasFixedSize(true);
 
@@ -121,17 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        add_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main_activity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
     public void show_rates(){
         Intent intent = new Intent(MainActivity.this,RatesActivity.class);
@@ -143,6 +127,10 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+    public void onBackPressed(){
+        Intent intent = new Intent(MainActivity.this,FirstActivity.class);
+        startActivity(intent);
     }
 
     @Override
