@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name"><B><strong>Shubham Jewelers</strong></B></string>
+    <string name="action_settings">Settings</string>
+    <string name="bill_title"><B><strong>SHUVAM JEWELLERS</strong></B></string>
+    <string name="bill_address"><b>New Road, Kathmandu</b></string>
+    <string name="bill_info"><b>We make all kinds of the jewellery.</b></string>
+    <string name="phone">4220579(S.)\n4266810(R.)</string>
+    <string name="notes">Notes:\n1.Making charges and wastage will not be returned.\n2.5 to 10% gold shall be deducted during buy back.\n
+    </string>
+    <string name="notes2">3.while returning goods, stones value will not be returned.\n4.E. and O.E.</string>
+</resources>
