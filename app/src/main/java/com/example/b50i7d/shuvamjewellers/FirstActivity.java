@@ -14,6 +14,8 @@ import android.widget.Toast;
 public class FirstActivity extends AppCompatActivity {
     CardView making_bill, calculate, profiles, rates;
 
+
+    //asdjas
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
