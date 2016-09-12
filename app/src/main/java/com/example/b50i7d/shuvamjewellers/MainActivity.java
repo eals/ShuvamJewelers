@@ -1,85 +1,27 @@
 package com.example.b50i7d.shuvamjewellers;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    TextView gold,silver;
-    CardView cardView ;
-    public static final String gold_value = "gold_value";
-    public static final String silver_value = "silver_value";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        cardView = (CardView) findViewById(R.id.card_view);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                show_rates();
-            }
-        });
 
-        gold = (TextView) findViewById(R.id.rate);
-        silver = (TextView) findViewById(R.id.rate2);
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
-        final SharedPreferences.Editor editor = pref.edit();
-
-        Firebase.setAndroidContext(this);
-        Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
-        Firebase messagesRef11 = mRef.child("gold");
-        messagesRef11.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                editor.putString("gold_value",value);
-                gold.setText(value);
-                editor.commit();
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-            }
-        });
-        String imgSett = pref.getString(gold_value, "");
-
-        gold.setText(imgSett);
-
-        Firebase messagesRef2 = mRef.child("silver");
-        messagesRef2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                editor.putString("silver_value",value);
-                silver.setText(value);
-                editor.commit();
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-            }
-        });
-        String imgSett2 = pref.getString(silver_value, "");
-        silver.setText(imgSett2);
 
         RecyclerView recyle = (RecyclerView)findViewById(R.id.my_recycler_view);
         recyle.setHasFixedSize(true);
