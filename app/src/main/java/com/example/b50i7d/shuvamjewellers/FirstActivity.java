@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by B50i7D on 9/11/2016.
@@ -58,6 +59,7 @@ public class FirstActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(FirstActivity.this,"bye bye",Toast.LENGTH_SHORT);
                         finish();
                     }
                 }).setNegativeButton("No", null).show();
