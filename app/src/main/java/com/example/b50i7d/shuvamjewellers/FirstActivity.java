@@ -47,7 +47,7 @@ public class FirstActivity extends AppCompatActivity {
         rates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstActivity.this,RatesActivity.class);
+                Intent intent = new Intent(FirstActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
