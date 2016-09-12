@@ -22,12 +22,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     ArrayList<UserInfo> dataset;
     Dbhelper dbhelper;
+    String display_total;
+
     public CardAdapter(Context context) {
         super();
-
         dbhelper = new Dbhelper(context);
         dataset = dbhelper.getUserList();
-
     }
 
     @Override
@@ -41,8 +41,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
         final UserInfo info = dataset.get(i);
+
         viewHolder.itemName.setText(info.particular);
-        viewHolder.itemDate.setText(info.date);
+        viewHolder.itemDate.setText(info.total);
+
     }
 
     @Override
@@ -57,6 +59,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             super(itemView);
             itemName = (TextView)itemView.findViewById(R.id.iteminfo);
             itemDate = (TextView)itemView.findViewById(R.id.datefor_main);
+
         }
 
 
