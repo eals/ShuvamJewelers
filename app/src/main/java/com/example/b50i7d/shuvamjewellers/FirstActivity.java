@@ -15,7 +15,7 @@ public class FirstActivity extends AppCompatActivity {
     CardView making_bill, calculate, profiles, rates;
 
 
-    //asdjas
+    //asdjasj
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
