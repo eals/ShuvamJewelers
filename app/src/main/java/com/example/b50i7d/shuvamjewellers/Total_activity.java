@@ -101,7 +101,7 @@ public class Total_activity extends AppCompatActivity {
 
         dbhelper.insertUser(cv);
         Toast.makeText(this,discountValue,Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Total_activity.this,FinalBillActivity.class);
+        Intent intent = new Intent(Total_activity.this,FinalActivity.class);
         intent.putExtra("names",nameValue);
         intent.putExtra("pan_no",pan_noValue);
         intent.putExtra("date",dateValue);

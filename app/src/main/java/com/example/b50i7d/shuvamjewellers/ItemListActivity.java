@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,20 +33,7 @@ public class ItemListActivity extends Activity {
             final UserInfo info = list.get(i);
 
             View view = LayoutInflater.from(this).inflate(R.layout.list_item_layout,null);
-            TextView username = (TextView) view.findViewById(R.id.username);
-            TextView particular = (TextView) view.findViewById(R.id.particulars);
-            Button delete = (Button) view.findViewById(R.id.delete);
-            username.setText(info.name);
-            particular.setText(info.particular);
 
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dbhelper.deleteUser(info.id);
-                    populateUserList();
-                    Toast.makeText(ItemListActivity.this, "deleted...", Toast.LENGTH_SHORT).show();
-                }
-            });
 
             holder.addView(view);
         }

@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 final UserInfo info = list.get(position);
-                Intent intent = new Intent(MainActivity.this, FinalBillActivity.class);
+                Intent intent = new Intent(MainActivity.this, FinalActivity.class);
                 intent.putExtra("names",info.name);
                 intent.putExtra("no",info.no);
                 intent.putExtra("pan_no",info.pan_no);

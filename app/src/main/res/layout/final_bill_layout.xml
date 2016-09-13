@@ -350,5 +350,13 @@
         android:text="@string/notes2"
         android:textSize="8sp"
         android:layout_marginTop="-7dp"
+        android:id="@+id/asd"
+        />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/asd"
+        android:layout_marginTop="10dp"
+        android:id="@+id/image_view"
         />
 </RelativeLayout>
