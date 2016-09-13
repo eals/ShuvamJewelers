@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/light_gold"
+    >
     <ImageView
         android:padding="20dp"
         android:id="@+id/cameraImage"
         android:layout_marginBottom="100dp"
         android:layout_width="400dp"
-        android:layout_margin="20dp"
         android:layout_height="400dp"
-        android:src="@drawable/camera"
+        android:src="@drawable/camera_icon"
+        android:layout_centerHorizontal="true"
         />
     <Button
         android:id="@+id/cameraButton"
@@ -17,5 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:textSize="20sp"
+        android:background="@color/mid_gold"
         android:text="Take photo"/>
 </RelativeLayout>

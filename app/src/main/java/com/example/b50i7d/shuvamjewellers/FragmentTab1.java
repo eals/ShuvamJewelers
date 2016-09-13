@@ -12,7 +12,7 @@ import android.widget.TextView;
  */
     public class FragmentTab1 extends Fragment {
 
-    TextView pan_no,name,no,date,order_date,particular,weight,wastage,making,rate,total,discount,signature;
+    TextView pan_no,name,no,date,order_date,particular,weight,wastage,making,rate,total,discount,signature,bought_price_value,Todays_price_value;
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ import android.widget.TextView;
             name =(TextView) rootView.findViewById(R.id.mr_name);
             no =(TextView) rootView.findViewById(R.id.no_no);
             date =(TextView) rootView.findViewById(R.id.indate);
+            Todays_price_value = (TextView) rootView.findViewById(R.id.Todays_price_value);
             order_date =(TextView) rootView.findViewById(R.id.inorder_date);
             particular =(TextView) rootView.findViewById(R.id.inparticular);
             weight =(TextView) rootView.findViewById(R.id.inweight);
@@ -31,6 +32,7 @@ import android.widget.TextView;
             total =(TextView) rootView.findViewById(R.id.intotal);
             discount = (TextView) rootView.findViewById(R.id.indiscount);
             signature = (TextView) rootView.findViewById(R.id.name_section);
+            bought_price_value = (TextView) rootView.findViewById(R.id.bought_price_value);
 
             no.setText(getActivity().getIntent().getStringExtra("no"));
             name.setText(getActivity().getIntent().getStringExtra("names"));
@@ -46,6 +48,8 @@ import android.widget.TextView;
             total.setText(getActivity().getIntent().getStringExtra("total"));
             no.setText(getActivity().getIntent().getStringExtra("no"));
             signature.setText(getActivity().getIntent().getStringExtra("names"));
+            bought_price_value.setText(getActivity().getIntent().getStringExtra("total"));
+
 
 
 

@@ -352,11 +352,118 @@
         android:layout_marginTop="-7dp"
         android:id="@+id/asd"
         />
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_below="@+id/asd"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#a9a9a9"
         android:layout_marginTop="10dp"
-        android:id="@+id/image_view"
+        android:layout_below="@+id/asd"
+        android:id="@+id/v1"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#a9a9a9"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/v1"
+        android:id="@+id/v2"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v2"
+        android:id="@+id/bill_info_title"
+        android:textSize="20sp"
+        android:text="Invoice Info"
+        android:background="#a9a9a9"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bill_info_title"
+        android:id="@+id/bought_price"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Bought Price"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="value"
+            android:textSize="20sp"
+            android:id="@+id/bought_price_value"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e0e0e0"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/bought_price"
+        android:id="@+id/v3"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v3"
+        android:id="@+id/Todays_price"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Todays Price"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="value"
+            android:textSize="20sp"
+            android:id="@+id/Todays_price_value"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e0e0e0"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/Todays_price"
+        android:id="@+id/v4"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v4"
+        android:id="@+id/asdd"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Bought Price"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="value"
+            android:textSize="20sp"
+            android:id="@+id/ass"
+            />
+    </LinearLayout>
+
 </RelativeLayout>
