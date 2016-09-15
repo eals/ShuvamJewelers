@@ -7,6 +7,8 @@ import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +59,7 @@ public class FinalBillActivity extends AppCompatActivity {
         no.setText(getIntent().getStringExtra("no"));
         signature.setText(getIntent().getStringExtra("names"));
         bought_price_value.setText(getIntent().getStringExtra("total"));
+        String da = date.getText().toString();
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         String ratess = pref.getString(gold_value, "");
@@ -76,11 +79,16 @@ public class FinalBillActivity extends AppCompatActivity {
         String final_total1 = final_total.toString();
         Todays_price_value.setText(final_total1);
         if(total>total1){
+            Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             NotificationCompat.Builder mBuilder =
                     (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                             .setSmallIcon(R.drawable.gold_icon)
-                            .setContentTitle("My notification")
-                            .setContentText("Hello World!");
+                            .setContentTitle("Shuvam jewelers")
+                            .setContentText("the rate of the jeweler you bought in " + da+" \n has increased from" + total1 +" to "+ total)
+                            .setSound(alarmSound)
+                            .setStyle(new NotificationCompat.BigTextStyle()
+                                    .bigText("the rate of the jeweler you bought in " + da+" \n has increased from" + total1 +" to "+ total));
+
 // Creates an explicit intent for an Activity in your app
             Intent resultIntent = new Intent(this, MainActivity.class);
 
