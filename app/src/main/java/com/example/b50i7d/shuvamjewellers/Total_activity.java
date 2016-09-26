@@ -44,6 +44,7 @@ public class Total_activity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
         Firebase messagesRef11 = mRef.child(url);
+
         messagesRef11.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
