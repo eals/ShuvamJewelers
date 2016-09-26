@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 /**
  * Created by B50i7D on 9/2/2016.
@@ -35,8 +38,25 @@ public class Total_activity extends AppCompatActivity {
         total = (TextView) findViewById(R.id.ttotal);
         confirm = (Button) findViewById(R.id.confirm);
         discount = (TextView) findViewById(R.id.tdiscount);
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("name");
+        Toast.makeText(Total_activity.this,url,Toast.LENGTH_LONG).show();
+        Firebase.setAndroidContext(this);
+        Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
+        Firebase messagesRef11 = mRef.child(url);
+        messagesRef11.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
 
+                name.setText(value);
+                Toast.makeText(Total_activity.this,value,Toast.LENGTH_LONG).show();
+            }
 
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
 
         name.setText(getIntent().getStringExtra("names"));
         pan_no.setText(getIntent().getStringExtra("pan_nos"));
@@ -80,8 +100,6 @@ public class Total_activity extends AppCompatActivity {
         cv.put("rate",rateValue);
         cv.put("total",totalValue);
         cv.put("discount",discountValue);
-
-        Firebase.setAndroidContext(Total_activity.this);
 
         Firebase ref = new Firebase("https://shuvamjewelery.firebaseio.com/");
 

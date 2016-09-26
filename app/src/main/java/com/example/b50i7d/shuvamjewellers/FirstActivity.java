@@ -12,7 +12,7 @@ import android.widget.Toast;
  * Created by B50i7D on 9/11/2016.
  */
 public class FirstActivity extends AppCompatActivity {
-    CardView making_bill, calculate, profiles, rates;
+    CardView making_bill, calculate, profiles, rates,scan;
 
 
     //asdjasj
@@ -24,6 +24,7 @@ public class FirstActivity extends AppCompatActivity {
         calculate = (CardView) findViewById(R.id.calculate);
         profiles = (CardView) findViewById(R.id.profiles);
         rates = (CardView) findViewById(R.id.rates);
+        scan = (CardView) findViewById(R.id.scan);
 
         making_bill.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FirstActivity.this, RatesActivity.class);
+                startActivity(intent);
+            }
+        });
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this, Scanner.class);
                 startActivity(intent);
             }
         });

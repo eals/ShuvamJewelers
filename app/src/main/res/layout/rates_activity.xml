@@ -112,7 +112,7 @@
             android:layout_weight="3"
             android:layout_height="wrap_content"
             android:text="Gold Rates per 1 tola"
-            android:textSize="20sp"
+            android:textSize="15sp"
             />
         <TextView
             android:layout_width="0dp"
@@ -244,7 +244,7 @@
             android:layout_weight="3"
             android:layout_height="wrap_content"
             android:text="Silver Rates per 1 tola"
-            android:textSize="20sp"
+            android:textSize="15sp"
             />
         <TextView
             android:layout_width="0dp"

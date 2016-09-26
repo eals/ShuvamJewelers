@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "954642533956",
+    "firebase_url": "https://shuvamjewelery.firebaseio.com",
+    "project_id": "shuvamjewelery",
+    "storage_bucket": "shuvamjewelery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954642533956:android:67471a725f23699c",
+        "android_client_info": {
+          "package_name": "com.example.b50i7d.shuvamjewellers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954642533956-0rkn94g0urql68t69i86imba5g52uv3n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnPPdnC2mxZ2uuHRu6J9BctJ7l51cyicI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

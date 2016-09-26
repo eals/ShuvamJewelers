@@ -28,6 +28,7 @@
         <activity android:name=".RatesActivity" />
         <activity android:name=".CalculateActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Scanner"/>
         <activity android:name=".FinalActivity"></activity>
     </application>
 
