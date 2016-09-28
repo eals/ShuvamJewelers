@@ -44,19 +44,29 @@ public class Total_activity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
         Firebase messagesRef11 = mRef.child(url);
+
         messagesRef11.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-
-                name.setText(value);
-                Toast.makeText(Total_activity.this,value,Toast.LENGTH_LONG).show();
+               ItemInfoActivity infoActivity = dataSnapshot.getValue(ItemInfoActivity.class);
+                name.setText(infoActivity.getName());
+                date.setText(infoActivity.getDate());
+                order_date.setText(infoActivity.getOrder_date());
+                making.setText(infoActivity.getMaking());
+                particular.setText(infoActivity.getParticular());
+                weight.setText(infoActivity.getWestage());
+                wastage.setText(infoActivity.getWestage());
+                pan_no.setText(infoActivity.getPan_no());
+                no.setText(infoActivity.getNo());
+                rate.setText(infoActivity.getRate());
+                discount.setText(infoActivity.getDiscount());
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
             }
         });
+
 
         name.setText(getIntent().getStringExtra("names"));
         pan_no.setText(getIntent().getStringExtra("pan_nos"));
