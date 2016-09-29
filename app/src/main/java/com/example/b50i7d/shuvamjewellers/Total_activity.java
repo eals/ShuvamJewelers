@@ -2,6 +2,7 @@ package com.example.b50i7d.shuvamjewellers;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,28 +39,34 @@ public class Total_activity extends AppCompatActivity {
         total = (TextView) findViewById(R.id.ttotal);
         confirm = (Button) findViewById(R.id.confirm);
         discount = (TextView) findViewById(R.id.tdiscount);
-        Intent intent = getIntent();
-        String url = intent.getStringExtra("name");
-        Toast.makeText(Total_activity.this,url,Toast.LENGTH_LONG).show();
-        Firebase.setAndroidContext(this);
-        Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
-        Firebase messagesRef11 = mRef.child(url);
 
-        messagesRef11.addValueEventListener(new ValueEventListener() {
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = pref.edit();
+
+        Firebase.setAndroidContext(this);
+        Firebase mRef1 = new Firebase("https://shuvamjewelery.firebaseio.com/");
+        Firebase messagesRef12 = mRef1.child("gold");
+        messagesRef12.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               ItemInfoActivity infoActivity = dataSnapshot.getValue(ItemInfoActivity.class);
-                name.setText(infoActivity.getName());
-                date.setText(infoActivity.getDate());
-                order_date.setText(infoActivity.getOrder_date());
-                making.setText(infoActivity.getMaking());
-                particular.setText(infoActivity.getParticular());
-                weight.setText(infoActivity.getWestage());
-                wastage.setText(infoActivity.getWestage());
-                pan_no.setText(infoActivity.getPan_no());
-                no.setText(infoActivity.getNo());
-                rate.setText(infoActivity.getRate());
-                discount.setText(infoActivity.getDiscount());
+                String value = dataSnapshot.getValue(String.class);
+                editor.putString("gold_value",value);
+                editor.commit();
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
+
+        Firebase messagesRef2 = mRef1.child("silver");
+        messagesRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                editor.putString("silver_value",value);
+                editor.commit();
             }
 
             @Override
@@ -68,7 +75,43 @@ public class Total_activity extends AppCompatActivity {
         });
 
 
-        name.setText(getIntent().getStringExtra("names"));
+
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("name");
+        if(url== null){
+
+        }else{
+            Toast.makeText(Total_activity.this,url,Toast.LENGTH_LONG).show();
+            Firebase.setAndroidContext(this);
+            Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
+            Firebase messagesRef11 = mRef.child(url);
+
+            messagesRef11.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    UserInfo userInfo = dataSnapshot.getValue(UserInfo.class);
+                    name.setText(userInfo.name);
+                    pan_no.setText(userInfo.pan_no);
+                    date.setText(userInfo.date);
+                    order_date.setText(userInfo.order_date);
+                    making.setText(userInfo.making);
+                    wastage.setText(userInfo.westage);
+                    discount.setText(userInfo.discount);
+                    rate.setText(userInfo.rate);
+                    total.setText(userInfo.total);
+                    weight.setText(userInfo.westage);
+                    particular.setText(userInfo.particular);
+
+                }
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+                    Intent intent = new Intent(Total_activity.this,Scanner.class);
+                    startActivity(intent);
+                    Toast.makeText(Total_activity.this,"invalid product",Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+                name.setText(getIntent().getStringExtra("names"));
         pan_no.setText(getIntent().getStringExtra("pan_nos"));
         date.setText(getIntent().getStringExtra("dates"));
         order_date.setText(getIntent().getStringExtra("order_dates"));
@@ -85,6 +128,9 @@ public class Total_activity extends AppCompatActivity {
                 confrimation_for_saving();
             }
         });
+    }
+    public void confrimation_for_saving2(){
+
     }
     public void confrimation_for_saving(){
         String nameValue = name.getText().toString();
@@ -110,7 +156,7 @@ public class Total_activity extends AppCompatActivity {
         cv.put("rate",rateValue);
         cv.put("total",totalValue);
         cv.put("discount",discountValue);
-
+        Firebase.setAndroidContext(this);
         Firebase ref = new Firebase("https://shuvamjewelery.firebaseio.com/");
 
         UserInfo info = new UserInfo();

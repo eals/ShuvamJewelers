@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -27,6 +23,7 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
         setContentView(mScannerView);
         mScannerView.setResultHandler(this);
         mScannerView.startCamera();
+
     }
 
 
@@ -39,11 +36,6 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
 
     @Override
     public void handleResult(Result result) {
-        //Do anything with result here :D
-        final String[] a = new String[1];
-        Firebase.setAndroidContext(this);
-        Firebase mRef = new Firebase("https://shuvamjewelery.firebaseio.com/");
-
 
         Log.w("handleResult", result.getText());
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -52,18 +44,6 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler 
         builder.setMessage(url);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        Firebase messagesRef11 = mRef.child(url);
-        messagesRef11.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                 a[0] = value;
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-            }
-        });
         Intent intent = new Intent(Scanner.this,Total_activity.class);
         intent.putExtra("name",url);
         startActivity(intent);
